@@ -1,0 +1,17 @@
+#PBS -N IBC_block
+#PBS -A BOOM
+#PBS -l select=1:ncpus=10:mem=100GB,walltime=48:00:00
+#PBS -S /bin/bash
+#PBS -o fannot_block.o
+#PBS -e fannot_block.e
+#PBS -J 1-374
+cd /annots/ibc_fast/
+parameters=`sed -n "${PBS_ARRAY_INDEX} p" annots/input_parameters_for_fannot.txt`
+parameterArray=($parameters)
+
+chrom=${parameterArray[0]}
+istart=${parameterArray[1]}
+iend=${parameterArray[2]}
+
+./fannot $chrom $istart $iend
+
