@@ -18,4 +18,4 @@ Results, for this analyses correspond to Table S6.
 
 3) Estimation of ID using LD score regression is described in ID-LDSC.R.
 
-
+4) Example_script_for_Estimation_of_ID_enrichment.R gives a detailed example of how run our model to estimate ID enrichment. Try it!
